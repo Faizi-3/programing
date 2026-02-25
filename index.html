@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team Management System</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- login form shown when user is not authenticated -->
+<div id="loginSection" class="login-container">
+    <h2>Login</h2>
+    <input type="text" id="loginUser" placeholder="Username">
+    <input type="password" id="loginPass" placeholder="Password">
+    <button class="primary-btn" id="loginBtn">Login</button>
+    <p id="loginError" class="error"></p>
+</div>
+
+<!-- actual page content hidden until login succeeds -->
+<div id="mainContent" style="display:none;">
+    <nav class="navbar">
+        <div class="logo">Faizi</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="attendance.html">Daily Attendance</a></li>  <!-- NEW -->
+            <li><a href="admin.html">Admin</a></li>
+            <li><a href="#" id="logoutLink" style="display:none;">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Attendance</h1>
+
+    <form id="attendanceForm">
+  <div class="form-group">
+    <label for="siteSelect">Site Name</label>
+    <select id="siteSelect" required>
+      <option value="">Select Site Name</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="nameSelect">Employee Name</label>
+    <select id="nameSelect" required>
+      <option value="">Select Name</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="date">Date</label>
+    <input type="date" id="date" required>
+  </div>
+
+  <div class="form-group">
+    <label for="present">Present</label>
+    <select id="present">
+      <option value="true">Yes</option>
+      <option value="false">No</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="meal">Meal Taken</label>
+    <select id="meal">
+      <option value="true">Yes</option>
+      <option value="false">No</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="paidBy">Paid By</label>
+    <select id="paidBy">
+      <option value="">Select</option>
+      <option value="Nadeem">Nadeem</option>
+      <option value="Shakeel">Shakeel</option>
+    </select>
+  </div>
+
+  <button type="submit" class="primary-btn" id="submitBtn">Add Record</button>
+</form>
+
+<table>
+  <thead>
+    <tr>
+      <th>Site Name</th>
+      <th>Employee Name</th>
+      <th>Date</th>
+      <th>Present</th>
+      <th>Meal</th>
+      <th>Paid By</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody id="tableBody"></tbody>
+</table>
+    </div> <!-- end container -->
+</div> <!-- end mainContent -->
+
+<script src="js/main.js"></script>
+</body>
+</html>

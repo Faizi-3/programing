@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- login form for admin page -->
+<div id="loginSection" class="login-container">
+    <h2>Login</h2>
+    <input type="text" id="loginUser" placeholder="Username">
+    <input type="password" id="loginPass" placeholder="Password">
+    <button class="primary-btn" id="loginBtn">Login</button>
+    <p id="loginError" class="error"></p>
+</div>
+
+<div id="mainContent" style="display:none;">
+    <nav class="navbar">
+        <div class="logo">Team Manager</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a class="active">Admin</a></li>
+            <li><a href="#" id="logoutLink" style="display:none;">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Admin Panel</h1>
+        <div>
+    <!-- Manage Site Names -->
+    <h2>Site Names</h2>
+    <div class="inputButton" >    <input type="text" id="siteNameInput" placeholder="Enter Site Name">
+    <button class="primary-btn" onclick="addSite()">Add Site</button>
+</div>
+
+    <table id="siteTable">
+        <thead>
+            <tr>
+                <th>Site Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="siteTableBody"></tbody>
+    </table>
+
+    <hr>
+</div>
+<div>
+    <!-- Manage Members -->
+    <h2>Members</h2>
+    <div class="inputButton">
+    <input type="text" id="memberName" placeholder="Enter Member Name">
+    <button class="primary-btn" onclick="addMember()">Add Member</button>
+</div>
+    <table id="memberTable">
+        <thead>
+            <tr>
+                <th>Employee Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="memberTableBody"></tbody>
+    </table>
+
+    <hr>
+</div>
+<div>
+    <!-- Access control -->
+    <h2>Access</h2>
+    <div class="access-group">
+        <div class="access-inputs">
+            <input type="text" id="accessUser" placeholder="Username">
+            <input type="password" id="accessPass" placeholder="Password">
+            <select id="accessRole">
+                <option value="user">Normal User</option>
+                <option value="admin">Admin</option>
+            </select>
+            <div class="custom-multiselect">
+                <button type="button" class="multiselect-btn" id="pagesDropdownBtn">Select Pages ▼</button>
+                <div class="multiselect-menu" id="pagesMenu">
+                    <label><input type="checkbox" value="home" class="page-checkbox"> Home</label>
+                    <label><input type="checkbox" value="attendance" class="page-checkbox"> Attendance</label>
+                    <label><input type="checkbox" value="admin" class="page-checkbox"> Admin</label>
+                </div>
+            </div>
+        </div>
+        <button class="primary-btn" id="userActionBtn" onclick="addUser()">Add User</button>
+    </div>
+
+    <table id="userTable">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Role</th>
+                <th>Pages</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="userTableBody"></tbody>
+    </table>
+    </div>
+</div> <!-- end container -->
+</div> <!-- end mainContent -->
+
+<script src="js/admin.js"></script>
+</body>
+</html> 

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Attendance Page</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="mainContent">
+    <nav class="navbar">
+        <div class="logo">Team Manager</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="attendance.html" class="active">Attendance</a></li>
+            <li><a href="admin.html">Admin</a></li>
+
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Attendance Page</h1>
+
+    <form id="attendanceForm">
+    <div class="form-fields-container">
+        <div class="form-group">
+            <label for="siteSelect">Site Name</label>
+            <select class="inputClassSelect" id="siteSelect" required>
+                <option value="">Select Site Name</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="nameSelect">Employee Name</label>
+            <select class="inputClassSelect" id="nameSelect" required>
+                <option value="">Select Employee Name</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="date">Date</label>
+            <input class="inputClassSelect"  type="date" id="date" required>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button type="submit" class="primary-btn">Submit</button>
+    </div>
+</form>
+
+<h2 id="dateRangeHeading" class="date-range-heading">Last 15 Days Attendance</h2>
+
+<!-- Attendance Table -->
+<table id="attendanceTable">
+    <thead>
+        <tr>
+            <th>Employee Name</th>
+            <th>Site Name</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody id="attendanceTableBody"></tbody>
+</table>
+    </div> <!-- end container -->
+</div> <!-- end mainContent -->
+
+<script src="js/attendance.js"></script>
+</body>
+</html>
